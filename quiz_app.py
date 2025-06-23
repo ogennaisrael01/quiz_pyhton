@@ -2,9 +2,11 @@ import time
 import json
 def load_from_quiz_file(file_name="quiz_file.json"):
     with open(file_name, "r") as file:
-        data = json.load(file)
-        return data
-
+        try:
+            data = json.load(file)
+            return data
+        except FileNotFoundError:
+            print("Error: File not found")
 import random    
 def low_level_quiz_funtion():
     
