@@ -28,8 +28,8 @@ def save_correct_answers(answer, filename="correct_answer_file.json"):
 # Save incorrect answer into a json file for later review
 def save_incorrect_answer(answer, filename="incorrect_answer.json"):
     """
-        - Saves the question that you passeed
-        - A message indicating that you failed the question
+        - Saves the question that you failed
+        - A message indicating that you failed that question
         - Your answer to that question
         - The correct answer
     """
@@ -103,7 +103,7 @@ def low_level_quiz():
     
     save_correct_answers(correct_answers) 
     save_incorrect_answer(incorrect_answers)
-    print("\nResult loading......")
+    print("\nResult calcualting......")
      # Result
     time.sleep(10)
     print(f"\nYou answered {score} out of {total_question_answered} correctly")        
@@ -152,7 +152,7 @@ def high_level_quiz():
     
     save_correct_answers(correct_answers) 
     save_incorrect_answer(incorrect_answers)
-    print("\nResult loading......")
+    print("\nResult calculating......")
      # Result
     time.sleep(10)
     print(f"\nYou answered {score} out of {total_question_answered} correctly")        
