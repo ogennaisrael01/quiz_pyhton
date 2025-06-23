@@ -16,7 +16,7 @@ def show_instruction_high_levl():
             - After each question you will see if you were correct or not 
             - At the end you score will be displayed 
             - Answers are not case sensitive 
-            - Your correct answers, incorrect answer and score are logged into a file
+            - Your correct answers, incorrect answer and score are logged into a file for later review
 
             Happy playing\n Good luck
         """
@@ -32,7 +32,7 @@ def show_instruction_low_levl():
             - You can enter in upper or lower case. i.e they are not case sensitve
             - You will see if you are correct or not after each question
             - At the end score will be displayed
-            - Your correct answer, incorrect answer and score are logged into a file
+            - Your correct answer, incorrect answer and score are logged into a file for later review
             Happy playing \nGood luck
         """
     )
@@ -52,13 +52,14 @@ def main():
                 time.sleep(20)
                 high_level_quiz_function()
 
-            if level == "low":
+            elif level == "low":
                 show_instruction_low_levl()
                 time.sleep(20)
                 low_level_quiz_funtion()
 
             else:
                 print("Still under construction")
-                
+
+ # start quiz               
 if __name__ == "__main__":
     main()

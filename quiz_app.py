@@ -76,7 +76,7 @@ def low_level_quiz_funtion():
     print(f"You answered {total_question_answered_correctly} out of {total_question_answered} correctly")        
     percentage = (score / total_question_answered ) * 100
     print(f"Your score is: {round(percentage, 2)}%")
-low_level_quiz_funtion()
+
 
 
 def high_level_quiz_function():
