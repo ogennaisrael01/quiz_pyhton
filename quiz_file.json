@@ -1,0 +1,462 @@
+[
+    {
+        "question": "What is the capital of Nigeria?",
+        "options": {
+            "A": "Lagos",
+            "B": "Abuja",
+            "C": "Kano",
+            "D": "Ibadan"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which planet is known as the Red Planet?",
+        "options": {
+            "A": "Earth",
+            "B": "Mars",
+            "C": "Venus",
+            "D": "Jupiter"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "What is the largest ocean on Earth?",
+        "options": {
+            "A": "Atlantic Ocean",
+            "B": "Indian Ocean",
+            "C": "Arctic Ocean",
+            "D": "Pacific Ocean"
+        },
+        "answer": "D"
+    },
+    {
+        "question": "Who wrote 'Romeo and Juliet'?",
+        "options": {
+            "A": "Charles Dickens",
+            "B": "William Shakespeare",
+            "C": "Jane Austen",
+            "D": "Mark Twain"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "How many continents are there on Earth?",
+        "options": {
+            "A": "Five",
+            "B": "Six",
+            "C": "Seven",
+            "D": "Eight"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "What is the chemical symbol for water?",
+        "options": {
+            "A": "H2O",
+            "B": "CO2",
+            "C": "O2",
+            "D": "NaCl"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "What is the currency of Japan?",
+        "options": {
+            "A": "Yen",
+            "B": "Dollar",
+            "C": "Euro",
+            "D": "Peso"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "Who invented the light bulb?",
+        "options": {
+            "A": "Albert Einstein",
+            "B": "Isaac Newton",
+            "C": "Thomas Edison",
+            "D": "Galileo Galilei"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "In which year did World War II end?",
+        "options": {
+            "A": "1945",
+            "B": "1939",
+            "C": "1918",
+            "D": "1950"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "What is the hardest natural substance?",
+        "options": {
+            "A": "Gold",
+            "B": "Diamond",
+            "C": "Silver",
+            "D": "Iron"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "What is the smallest prime number?",
+        "options": {
+            "A": "1",
+            "B": "2",
+            "C": "3",
+            "D": "5"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which gas do plants absorb from the atmosphere?",
+        "options": {
+            "A": "Oxygen",
+            "B": "Nitrogen",
+            "C": "Carbon dioxide",
+            "D": "Helium"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "Who painted the Mona Lisa?",
+        "options": {
+            "A": "Vincent van Gogh",
+            "B": "Pablo Picasso",
+            "C": "Leonardo da Vinci",
+            "D": "Michelangelo"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "What is the largest mammal?",
+        "options": {
+            "A": "Elephant",
+            "B": "Blue whale",
+            "C": "Giraffe",
+            "D": "Hippopotamus"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "What is the capital of France?",
+        "options": {
+            "A": "Madrid",
+            "B": "Paris",
+            "C": "Rome",
+            "D": "Berlin"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which is the longest river in the world?",
+        "options": {
+            "A": "Amazon",
+            "B": "Nile",
+            "C": "Yangtze",
+            "D": "Mississippi"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which organ pumps blood through the body?",
+        "options": {
+            "A": "Brain",
+            "B": "Kidney",
+            "C": "Heart",
+            "D": "Liver"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "How many sides does a hexagon have?",
+        "options": {
+            "A": "5",
+            "B": "6",
+            "C": "7",
+            "D": "8"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which is the largest desert in the world?",
+        "options": {
+            "A": "Gobi",
+            "B": "Sahara",
+            "C": "Arctic",
+            "D": "Antarctic"
+        },
+        "answer": "D"
+    },
+    {
+        "question": "Who is known as the Father of Computers?",
+        "options": {
+            "A": "Alan Turing",
+            "B": "Charles Babbage",
+            "C": "Bill Gates",
+            "D": "Steve Jobs"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "What is the capital of Ghana?",
+        "options": {
+            "A": "Accra",
+            "B": "Lagos",
+            "C": "Abuja",
+            "D": "Nairobi"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "What is the boiling point of water at sea level?",
+        "options": {
+            "A": "90°C",
+            "B": "95°C",
+            "C": "100°C",
+            "D": "110°C"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "How many teeth does an adult human have?",
+        "options": {
+            "A": "28",
+            "B": "30",
+            "C": "32",
+            "D": "34"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "What is the main gas found in the air we breathe?",
+        "options": {
+            "A": "Oxygen",
+            "B": "Nitrogen",
+            "C": "Carbon dioxide",
+            "D": "Hydrogen"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Who discovered gravity?",
+        "options": {
+            "A": "Albert Einstein",
+            "B": "Isaac Newton",
+            "C": "Galileo Galilei",
+            "D": "Nikola Tesla"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "What is the tallest mountain in the world?",
+        "options": {
+            "A": "K2",
+            "B": "Mount Everest",
+            "C": "Kilimanjaro",
+            "D": "Alps"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which animal is known as the King of the Jungle?",
+        "options": {
+            "A": "Tiger",
+            "B": "Lion",
+            "C": "Leopard",
+            "D": "Elephant"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "How many days are there in a leap year?",
+        "options": {
+            "A": "365",
+            "B": "366",
+            "C": "367",
+            "D": "364"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Who invented the telephone?",
+        "options": {
+            "A": "Alexander Graham Bell",
+            "B": "Thomas Edison",
+            "C": "Nikola Tesla",
+            "D": "Albert Einstein"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "Which is the fastest land animal?",
+        "options": {
+            "A": "Cheetah",
+            "B": "Lion",
+            "C": "Tiger",
+            "D": "Leopard"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "What is the capital of Kenya?",
+        "options": {
+            "A": "Nairobi",
+            "B": "Kampala",
+            "C": "Dodoma",
+            "D": "Kigali"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "Which element has the chemical symbol O?",
+        "options": {
+            "A": "Gold",
+            "B": "Oxygen",
+            "C": "Osmium",
+            "D": "Ozone"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "How many legs does a spider have?",
+        "options": {
+            "A": "6",
+            "B": "8",
+            "C": "10",
+            "D": "12"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which continent is known as the Dark Continent?",
+        "options": {
+            "A": "Asia",
+            "B": "Africa",
+            "C": "Europe",
+            "D": "Australia"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Who was the first president of the USA?",
+        "options": {
+            "A": "George Washington",
+            "B": "Abraham Lincoln",
+            "C": "Thomas Jefferson",
+            "D": "John Adams"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "Which sport is known as the 'king of sports'?",
+        "options": {
+            "A": "Basketball",
+            "B": "Football (soccer)",
+            "C": "Cricket",
+            "D": "Tennis"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "What is the capital of Egypt?",
+        "options": {
+            "A": "Cairo",
+            "B": "Tripoli",
+            "C": "Rabat",
+            "D": "Algiers"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "What is the freezing point of water?",
+        "options": {
+            "A": "0°C",
+            "B": "10°C",
+            "C": "-10°C",
+            "D": "-5°C"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "Which instrument is used to measure temperature?",
+        "options": {
+            "A": "Barometer",
+            "B": "Thermometer",
+            "C": "Hygrometer",
+            "D": "Anemometer"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Who was the first man to walk on the moon?",
+        "options": {
+            "A": "Neil Armstrong",
+            "B": "Yuri Gagarin",
+            "C": "Buzz Aldrin",
+            "D": "John Glenn"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "What is the capital of China?",
+        "options": {
+            "A": "Shanghai",
+            "B": "Beijing",
+            "C": "Hong Kong",
+            "D": "Guangzhou"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which is the smallest continent?",
+        "options": {
+            "A": "Europe",
+            "B": "Australia",
+            "C": "Antarctica",
+            "D": "South America"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "What is the capital of South Africa?",
+        "options": {
+            "A": "Cape Town",
+            "B": "Johannesburg",
+            "C": "Pretoria",
+            "D": "Durban"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "Which is the largest country by area?",
+        "options": {
+            "A": "China",
+            "B": "USA",
+            "C": "Russia",
+            "D": "Canada"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "Which bird is known for its beautiful tail feathers?",
+        "options": {
+            "A": "Sparrow",
+            "B": "Peacock",
+            "C": "Pigeon",
+            "D": "Crow"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "What is the square root of 64?",
+        "options": {
+            "A": "6",
+            "B": "7",
+            "C": "8",
+            "D": "9"
+        },
+        "answer": "C"
+    }
+]
