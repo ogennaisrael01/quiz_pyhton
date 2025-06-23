@@ -1,15 +1,58 @@
-import time
+
 import json
+import random
+import time
+from json import JSONDecodeError
+
+# Read quiz question from a json file
 def load_from_quiz_file(file_name="quiz_file.json"):
     with open(file_name, "r") as file:
         try:
             data = json.load(file)
             return data
-        except FileNotFoundError:
+        except JSONDecodeError:
             print("Error: File not found")
-import random    
-def low_level_quiz_funtion():
+
+#save correct answers into a json file for later review
+def save_correct_answers(answer, filename="correct_answer_file.json"):
+    """
+        - Saves the questions that you passed
+        - A message indicating that you passed that question
+    """
+    try:
+        with open(filename, "w") as file:
+            json.dump(answer, file)
+    except JSONDecodeError as e:
+        print(f"Error: {e}")
+
+# Save incorrect answer into a json file for later review
+def save_incorrect_answer(answer, filename="incorrect_answer.json"):
+    """
+        - Saves the question that you passeed
+        - A message indicating that you failed the question
+        - Your answer to that question
+        - The correct answer
+    """
+    try:
+        with open(filename, "w") as file:
+            json.dump(answer, file)
+    except JSONDecodeError as e:
+        print(f"Error: {e}")
+
+total_quiz = len(load_from_quiz_file())
+
+def load_question():
+    """
+     - Load questions from JSON file
+    """
+    questions = load_from_quiz_file()
+    random.shuffle(questions)
+    for question in questions:
+        yield question
     
+
+def low_level_quiz():
+
     """
         A low level Quiz 
         - Loads questions from file
@@ -17,69 +60,59 @@ def low_level_quiz_funtion():
         - Tracks correct/incorrect answers and score
         - Saves results to files
     """ 
-   
-    quiz_question = load_from_quiz_file() #load question from file
-    overrall_total_question = len(quiz_question) #total number of question
-    correct_answers = [] #store correct answer in a dictionary
-    incorrect_answers = [] #store incorrect answer in a dictionary
-    score = 0 #Initialize the score
-    total_question_answered_correctly = 0 # number of question a user answerd correctly
-    total_question_answered = 0 # Total question answer
+    quiz_question = load_question()
+    correct_answers = []
+    incorrect_answers = []
 
-    random.shuffle(quiz_question)   
-    for index, value in enumerate(quiz_question): # loop through question and display in a simple format
+    for index, value in enumerate(quiz_question):
         print("=" * 50)
-        print(f"Question {index} of {overrall_total_question}")
+        print(f"This is question number {index} out of {total_quiz}")
+        # Display question one at a time
         question = value["question"]
-        
-        print (f"Question number {index}: {question}")
+        print(f"\nQuestion: {question}")
 
-        # Display options to choose from 
+        # Display options
         options = value["options"]
-        for key, option in options.items(): # loop through options 
-            print(f"{key}: {option}")
-        print()
-        print("Choose A, B, C, D from the above option")
+        for key, option in options.items():
+           print(f"{key}: {option}") 
 
-            # get user answer
-        user_answer = input("Enter your prefered answer: ").strip().upper()
-        if  user_answer == value["answer"]:
-            print("Correct!")
-            correct_answers.append({"\nQuestion": value["question"], "Message": "Passed"})
-            score += 1
-            total_question_answered_correctly += 1
+        print("Choose an answer from the above options")
 
-        
-        else:
+        # Get an answer from a user
+        user_answer = input("Enter your prefered choice(a, b, c, d) ").strip().upper()
+
+        # Checks if a user enter a valid option, else it is considered a failed test
+        if user_answer == "Q":
+            print("\nThank you for playing \nYou can always restart the program")
+            break
+        elif user_answer not in options.keys():
+            print("Failed.\nPlease enter a valid option next time(a, b, c, d) ")
+            incorrect_answers.append({"Question": value["question"], "Message": "Failed: Entered invaliid option"})
+
+        elif user_answer ==  value["answer"]: # compares user answer to the correct answer
+            print("That is correct")
+            correct_answers.append({"Question": value["question"], "Message": "Passed"})
+
+        else: # the answer was wrong but in list of options
             print("Incorrect!")
             print(f"The correct answer is {value["answer"]}")
-            incorrect_answers.append({"\nQuestion": value["question"], "Message": "Failed"})
+            incorrect_answers.append({"Question": value["question"], "Message": "Failed", "Your answer": user_answer, "Correct answer": value["answer"]})
+
+        score = len(correct_answers)
+        total_question_answered = score + len(incorrect_answers)
     
-        if index == 5:
-            print("session  completed")
-            break
-        total_question_answered += 1
-    
-    # log scores into a txt file
-    with open("score.txt", "w") as f:
-        f.write(str(score))
-    
-    # log correct answer in a json file
-    with open("correct_answer_file.json", "a") as file:
-        json.dump(correct_answers, file)
-    
-    # log incorrect answer in a json file
-    with open("incorrect_answer.json", "w") as file:
-        file.write(str(incorrect_answers))
-        
-    # Resulta
-    print(f"You answered {total_question_answered_correctly} out of {total_question_answered} correctly")        
+    save_correct_answers(correct_answers) 
+    save_incorrect_answer(incorrect_answers)
+    print("\nResult loading......")
+     # Result
+    time.sleep(10)
+    print(f"\nYou answered {score} out of {total_question_answered} correctly")        
     percentage = (score / total_question_answered ) * 100
     print(f"Your score is: {round(percentage, 2)}%")
 
 
+def high_level_quiz():
 
-def high_level_quiz_function():
     """
         High level quiz function
         - Loads questions from file
@@ -87,53 +120,41 @@ def high_level_quiz_function():
         - Tracks correct/incorrect answers and score
         - logs result to files
     """
+    questions = load_question()
+    correct_answers = []
+    incorrect_answers = []
 
-    quiz_question = load_from_quiz_file() #load question from file
-    overrall_total_question = len(quiz_question) #total number of question
-    correct_answers = [] #store correct answer in a dictionary
-    incorrect_answers = [] #store incorrect answer in a dictionary
-    score = 0 #Initialize the score
-    total_question_answered_correctly = 0 # number of question a user answerd correctly
-    total_question_answered = 0 # Total question answer
-
-    random.shuffle(quiz_question)
-    for index, value in enumerate(quiz_question): # loop through question and display in a simple format
+    for index, value in enumerate(questions): 
         print("=" * 50)
-        print(f"Question {index} of {overrall_total_question}")
+
+        # Get question
         question = value["question"]
         
-        print (f"Question number {index}: {question}")
+        print (f"Question {index}: {question}")
 
         options = value["options"]
-        print("Provide the answers")
         
-
-        user_answer = input("What is the correct answer: ").strip().capitalize()
-        
+        user_answer = input("\nYou are required to enter the correct answer\n " ).strip().capitalize()
+        # compare user answer with the correct answer 
         if user_answer == options[value["answer"]]:
-            print("Correct!")
+            print("That is correct!")
             correct_answers.append({"Question": value["question"], "Message": "Passed"})
-            score += 1
-            total_question_answered_correctly += 1
+        elif user_answer == "Q":
+            print("Thank you for playing \nYou can always restart the program")
+            break
         else:
             print("Incorrect!")
             print(f"The correct answer is {options[value["answer"]]}")
-            incorrect_answers.append({"Question": value["question"], "Message": "Failed"})
-
-        total_question_answered += 1
-     # log scores into a txt file
-    with open("score.txt", "a") as f:
-        f.write(str(score))
+            incorrect_answers.append({"Question": value["question"], "Message": "Failed", "Your answer": user_answer, "Correct Answer": value["answer"]})
+        
+        score = len(correct_answers)
+        total_question_answered = score + len(incorrect_answers)
     
-    # log correct answer in a json file
-    with open("correct_answer_file.json", "a") as file:
-        json.dump(correct_answers, file, indent=2)
-    
-    # log incorrect answer in a json file
-    with open("incorrect_answer.json", "a") as file:
-        json.dump(incorrect_answers, file, indent=2)
-
-    # Result
-    print(f"You answered {total_question_answered_correctly} out of {total_question_answered} correctly")        
+    save_correct_answers(correct_answers) 
+    save_incorrect_answer(incorrect_answers)
+    print("\nResult loading......")
+     # Result
+    time.sleep(10)
+    print(f"\nYou answered {score} out of {total_question_answered} correctly")        
     percentage = (score / total_question_answered ) * 100
     print(f"Your score is: {round(percentage, 2)}%")
