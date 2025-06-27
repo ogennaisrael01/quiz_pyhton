@@ -21,10 +21,24 @@ def save_correct_answers(answer, filename="correct_answer_file.json"):
     """
     try:
         with open(filename, "w") as file:
-            json.dump(answer, file)
+            json.dump(answer, file, indent=4)
     except JSONDecodeError as e:
         print(f"Error: {e}")
 
+def load_correct_answers(file_name="correct_answer.json"):
+    try:
+        with open(file_name, 'r') as f:
+            return json.load(f)
+    except (FileNotFoundError, JSONDecodeError):
+        return  []
+    
+def load_incorrect_answers(file_name="incorrect_answer.json"):
+    try:
+        with open(file_name, 'r') as f:
+            return json.load(f)
+    except (FileNotFoundError, JSONDecodeError):
+        return  []
+    
 # Save incorrect answer into a json file for later review
 def save_incorrect_answer(answer, filename="incorrect_answer.json"):
     """
@@ -35,7 +49,7 @@ def save_incorrect_answer(answer, filename="incorrect_answer.json"):
     """
     try:
         with open(filename, "w") as file:
-            json.dump(answer, file)
+            json.dump(answer, file, indent=4)
     except JSONDecodeError as e:
         print(f"Error: {e}")
 
@@ -47,9 +61,10 @@ def load_question():
     """
     questions = load_from_quiz_file()
     random.shuffle(questions)
-    for question in questions:
-        yield question
+
+    return (questions)
     
+
 
 def low_level_quiz():
 
@@ -61,8 +76,8 @@ def low_level_quiz():
         - Saves results to files
     """ 
     quiz_question = load_question()
-    correct_answers = []
-    incorrect_answers = []
+    correct_answers = load_correct_answers()
+    incorrect_answers = load_incorrect_answers()
 
     for index, value in enumerate(quiz_question):
         print("=" * 50)
@@ -111,6 +126,7 @@ def low_level_quiz():
     print(f"Your score is: {round(percentage, 2)}%")
 
 
+
 def high_level_quiz():
 
     """
@@ -121,8 +137,8 @@ def high_level_quiz():
         - logs result to files
     """
     questions = load_question()
-    correct_answers = []
-    incorrect_answers = []
+    correct_answers = load_correct_answers()
+    incorrect_answers = load_incorrect_answers()
 
     for index, value in enumerate(questions): 
         print("=" * 50)
